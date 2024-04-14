@@ -1,0 +1,165 @@
+s---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Header from '../components/Header.astro';
+
+const bikes = [
+	{
+		id: 1,
+		title: "Nimbus",
+		img: "nimbus1.jpg",
+		href: "#",
+		price: "2499"
+	},
+	{
+		id: 2,
+		title: "Nimbus",
+		img: "nimbus2.jpg",
+		href: "#",
+		price: "4999"
+	},
+	{
+		id: 3,
+		title: "Nimbus",
+		img: "nimbus3.jpg",
+		href: "#",
+		price: "3999"
+	}
+];
+---
+
+
+<Layout title="bikcraft">
+    <main>
+	<Header/>
+	<section class="main-um">
+		<div class="introdução">
+				<div class="box-um">
+					<h1>Bicicletas feitas sob medida<span class="ponto"></span></h1>
+					<p>
+					Bicicletas elétricas de alta precisão e qualidade,
+					feitas sob medida para você. Explore o mundo
+					na sua velocidade com a Bikcraft.
+					</p>
+					<span> <a class="botão-um" href="#"> Selecione a sua </a> </span>
+				</div>
+				<div class="nimbus-um">
+					<img class="img-nimbus-um" src="nimbus1.jpg" alt="">
+				</div>
+		</div>
+	</section>
+	<section>
+	<h2 class="escolha">Escolha a sua
+	<span class="ponto"></span>
+	</h2>
+	<section class="link-card-grid">
+		{
+			bikes.map((bike) => (
+				<div class="card-container">
+					<Card
+						title={bike.title}
+						href={bike.href}
+						price={bike.price}
+						src={bike.img}
+					/>
+				</div>
+			))
+		}
+	</section>
+	</section>
+    </main>
+</Layout>
+
+
+<style>
+	main {
+		margin: 0 auto;
+	}
+	.main-um {
+		background-color: black;
+		margin-bottom: 10rem;
+	}
+	.introdução {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		padding: 0.5rem 6rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		color: white;
+		line-height: 1.1;
+		align-items: center;
+	}
+	.nimbus-um {
+		margin-bottom: -9rem;
+	}
+	.img-nimbus-um {
+		object-fit: cover;
+		object-position: left right;
+		width: 100%;
+		height: 44rem;
+		border-radius: 0.4rem;
+	}
+	.box-um h1 {
+		font-size: 5vw;
+		max-width: 15ch;
+		font-family: Arial, Helvetica, sans-serif;
+		margin-bottom: 2rem;
+	}
+
+	.box-um p {
+		color: #B2B2B2;
+		font-size: 3.8vh;
+		font-family: Arial, Helvetica, sans-serif;
+		line-height: 1.5;
+	}
+	.botão-um {
+		font-size: 3vh;
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: 900;
+		text-transform: uppercase;
+		display: inline-block;
+		text-decoration: none;
+		padding: 1rem 2rem;
+		color: #332200;
+		background-image: linear-gradient(#FFBF00, #F2A50C);
+		border-radius: 0.2rem;
+		margin-top: 1.5rem;
+	}
+	.botão-um:hover {
+		background-image: linear-gradient(#F2A50c, #FFBF00);
+	}
+	header {
+		background-color: blue;
+		padding: 1rem;
+	}
+	.logo-bikcraft {
+		display: inline;
+	}
+	h2 {
+		background-color: white;
+		padding: 1rem 2rem;
+	}
+	.escolha {
+		font-family: Arial;
+	}
+	.ponto {
+		display: inline-block;
+		width: 0.2rem;
+		height: 0.2rem;
+		margin-left: 0.1rem;
+		background-color: yellow;
+		border-radius: 50%;
+	}
+	.link-card-grid {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 2rem;
+		gap: 2rem;
+		background-color: white;
+		justify-content: center;
+	}
+	.card-container {
+		background-color: white;
+	}
+</style>

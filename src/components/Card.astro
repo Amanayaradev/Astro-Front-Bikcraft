@@ -1,0 +1,42 @@
+---
+interface Props {
+	title: string;
+	price: string;
+	href: string;
+    src: string;
+}
+
+const { href, title, price, src  } = Astro.props;
+---
+
+<ul class="link-card">
+
+<a href={href}>
+<img src={src} alt={title}>
+    <h2>
+        {title}
+    </h2>
+    <p>
+        {price}
+    </p>
+</a>
+</ul>
+<style>
+    .link-card-grid {
+        display: flex;
+        gap: 2rem;
+        padding: 0;
+        align-items: center;
+    }
+	.link-card > a {
+		text-decoration: none;
+	}
+    img {
+        max-width: 15rem;
+    }
+    h2, p{
+        font-family: Arial;
+        color: black;
+        background-color: white;
+    }
+</style>

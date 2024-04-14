@@ -1,0 +1,65 @@
+---
+const indexNavigation = [
+    {
+        id: 1,
+        nav: "Bicicletas",
+        navPag: "#"
+    },
+    {
+        id: 2,
+        nav: "Seguros",
+        navPag: "#"
+    },
+    {
+        id: 3,
+        nav: "Contato",
+        navPag: "#"
+    }
+];
+---
+
+<header class="navBar">
+    <img class="logo-bikcraft" src="bikcraft.svg" alt="bikraft" />
+    <ul class="navUl">
+        {indexNavigation.map((navigation) => (
+            <li key={navigation.id}>
+                <a class="menu-link-item" href={navigation.navPag}>
+                    {navigation.nav}
+                </a>
+            </li>
+        ))}
+    </ul>
+</header>
+
+
+<style>
+    .logo-bikcraft {
+        max-width: 5rem;
+        max-height: 2rem;
+    }
+    .navBar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        padding: 1rem;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        font-family: Arial;
+    }
+    .navUl {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0.5rem;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
