@@ -1,0 +1,376 @@
+s---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FormOrcamento from '../components/FormOrcamento.astro';
+
+---
+
+<Layout title="bikcraft">
+<main>
+        <div>
+        <Header/>
+        </div>
+        <div class="c11 gray box-um-bike">
+            <div class="box-dentro-um">
+                <span class="span-block">COTAÇÕES NO SEU EMAIL</span>
+                <h2 class="estilo-h2-branco">solicite um orçamento<span class="ponto">.</span></h2>
+            </div>
+        </div>
+        <section class="total-orçamento-total">
+                <div class="orçamento-total">
+
+                    <div class="bikcraft-seguro">
+                            <h4 class="h4-orc">BIKCRAFT OU SEGURO ?</h4>
+                        <input type="radio" name="tipo1" value="bikcraft" id="bikcraft">
+                        <label for="bikcraft"> Bikraft</label>
+                        <input type="radio" name="tipo1" value="seguro" id="seguro">
+                        <label for="seguro">Seguro</label>
+                        <div class="orçamento" id="orçamento-bikcraft">
+                                <h4 class="h4-orc">ESCOLHA A SUA:</h4>
+                            <input type="radio" name="produto" value="nimbus" id="nimbus">
+                            <label for="nimbus">Nimbus Stark <span>R$ 3000</span></label>
+                            <div class="orçamento-detalhe">
+                                <ul class="lista-none">
+                                    <li>
+                                        <img src="icones/eletrica.svg" alt="">
+                                        Motor Elétrico
+                                    </li>
+                                    <li>
+                                        <img src="icones/carbono.svg" alt="">
+                                        Fibra de Carbono
+                                    </li>
+                                    <li>
+                                        <img src="icones/velocidade.svg" alt="">
+                                        40 km/h
+                                    </li>
+                                    <li>
+                                        <img src="icones/rastreador.svg" alt="">
+                                        Rastreador
+                                    </li>
+                                </ul>
+                                <img class="img-orçamento" src="bicicletas/nimbus.jpg" alt="bicicleta preta">
+                            </div>
+                            <input type="radio" name="produto" value="magic" id="magic">
+                            <label for="magic">Magic Might <span>R$ 2000</span></label>
+                            <div class="orçamento-detalhe">
+                                <ul class="lista-none">
+                                <li>
+                                    <img class="img-ico" src="icones/eletrica.svg" alt="">
+                                    Motor Elétrico
+                                </li>
+                                <li>
+                                    <img class="img-ico" src="icones/carbono.svg" alt="">
+                                    Fibra de Carbono
+                                </li><li>
+                                    <img class="img-ico" src="icones/velocidade.svg" alt="">
+                                    40 km/h
+                                </li><li>
+                                    <img class="img-ico" src="icones/rastreador.svg" alt="">
+                                    Rastreador
+                                </li>
+                            </ul>
+                            <img class="img-orçamento" src="bicicletas/magic.jpg" alt="">
+                            </div>
+
+                            <input type="radio" name="produto" value="nebula" id="nebula">
+                            <label for="nebula">Nebula Cosmic <span>R$ 1000</span></label>
+                            <div class="orçamento-detalhe">
+                                <ul class="lista-none">
+                                    <li>
+                                        <img class="img-ico" src="icones/eletrica.svg" alt="">
+                                        Motor Elétrico
+                                    </li>
+                                    <li>
+                                        <img class="img-ico" src="icones/carbono.svg" alt="">
+                                        Fibra de Carbono
+                                    </li><li>
+                                        <img class="img-ico" src="icones/velocidade.svg" alt="">
+                                        40 km/h
+                                    </li><li>
+                                        <img class="img-ico" src="icones/rastreador.svg" alt="">
+                                        Rastreador
+                                    </li>
+                                </ul>
+                            <img class="img-orçamento" src="bicicletas/nebula.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="orçamento" id="orçamento-seguro">
+                                <h4 class="h4-orc">ESCOLHA O PLANO:</h4>
+                            <input type="radio" name="seguro" value="ouro" id="ouro">
+                            <label for="ouro">Ouro <span>R$ 299</span></label>
+                            <div class="orçamento-detalhe detalhe-lista-seguro">
+                                <ul>
+                                    <li>Cinco trocas por ano</li>
+                                    <li>Assistência especial</li>
+                                    <li>Suporte 24h</li>
+                                    <li>Cobertura nacional</li>
+                                    <li>Desconto em parceiros</li>
+                                    <li>Acesso ao Clube Bikcraft</li>
+                                </ul>
+                            </div>
+
+                            <input type="radio" name="seguro" value="prata" id="prata">
+                            <label for="prata">prata <span>R$ 199</span></label>
+                            <div class="orçamento-detalhe detalhe-lista-seguro">
+                                <ul>
+                                    <li>Duas trocas por ano</li>
+                                    <li>Assistência técnica</li>
+                                    <li>Suporte 08h às 18h</li>
+                                    <li>Cobertura estadual</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="dados-orçamento">
+                        <FormOrcamento/>
+            </section>
+            <Footer/>
+    </main>
+</html>
+    </main>
+</Layout>
+
+
+<style>
+.total-orçamento-total {
+    background: #E5E5E5;
+}
+
+.orçamento-total {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    max-width: 1200px;
+    margin: 0 auto 0 auto;
+}
+
+.bikcraft-seguro {
+    align-content: start;
+    color: #b8b7b7;
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+}
+
+.bikcraft-seguro > * {
+    grid-column: 1/-1;
+    gap: 1rem;
+}
+
+.bikcraft-seguro > label {
+    grid-column: initial;
+}
+
+.bikcraft-seguro label {
+    font: 600 1rem/1.5 arial;
+    background-color: #424242;
+    padding: 12px 16px;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.bikcraft-seguro label:hover {
+    background-color: rgb(65, 65, 65);
+}
+
+.bikcraft-seguro label::before {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    width: 12px;
+    height: 12px;
+    border: 1px solid rgb(124, 124, 124);
+    border-radius: 50%;
+}
+
+.bikcraft-seguro input:checked + label:before {
+    border-color: #000000;
+    box-shadow: inset 0 0 0 3px #fff, inset 0 0 0 6px #000;
+}
+
+.bikcraft-seguro input {
+    display: none;
+}
+
+.bikcraft-seguro input:checked + label {
+    box-shadow: 0 0 0 2px #FFBB00;
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+}
+
+.bikcraft-seguro label span {
+    display: none;
+}
+.bikcraft-seguro input:checked + label span {
+    display: inline-block;
+}
+
+.orçamento {
+    display: none;
+}
+
+#bikcraft:checked ~ #orçamento-bikcraft,
+#seguro:checked ~ #orçamento-seguro {
+    display: block;
+}
+
+.bikcraft-seguro input:checked + label + .orçamento-detalhe {
+    display: grid;
+}
+
+.orçamento-detalhe {
+    font-size: 2.5vh;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 1rem 0;
+    background-color: #fff;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    align-items: center;
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    line-height: 1.5;
+}
+
+.orçamento-detalhe li {
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.orçamento-detalhe li img {
+    width: 20px;
+}
+.img-orçamento {
+    max-width: 100%;
+    width: 15rem;
+    object-fit: cover;
+    object-position: center;
+    height: 8rem;
+
+}
+
+.detalhe-lista-seguro {
+    justify-content: center;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+}
+
+.detalhe-lista-seguro li {
+    width: 30ch;
+}
+
+.detalhe-lista-seguro li::before {
+    content: "";
+    display: inline-block;
+    height: 12px;
+    border: 1px solid rgb(73, 73, 73);
+}
+
+
+
+
+
+
+
+/* orçamento */
+
+.text-form label,
+.text-form p {
+    display: block;
+    font: 600 1rem/1.5 Arial, Helvetica, sans-serif;
+}
+
+.h4-orc {
+    margin: 2rem 0;
+    font: 600 0.9rem/3 Arial, Helvetica, sans-serif;
+    color: #8b8b8b;
+}
+.h4-orc::before {
+    justify-content: center;
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 12px;
+    background-color: #FFBB00;
+    margin: 0 0.7rem 0 -1rem ;
+}
+
+.box-form{
+    background: #F7F7F7;
+    padding: 0.5rem;
+    font: 400 1rem/1.5 roboto, sans-serif;
+    border: 1px solid #EDEDED;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.teste-form option {
+    text-decoration: none;
+}
+
+.form-adress {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.first-form :nth-child(3),
+.first-form :nth-child(4) {
+    grid-column: span 2;
+}
+
+.box_termo {
+    align-items: center;
+    display: flex;
+    gap: 0.7rem;
+}
+
+.texto-box {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    color: #6b6b6b;
+}
+
+.detalhe-entrega { 
+    display: grid;
+    grid-template-columns: 1fr 35fr;
+    align-items: center;
+    margin-left: -1rem;
+}
+
+.dados-orçamento {
+    background-color: white;
+    padding: 4rem;
+}
+
+@media screen (max-width: 900px) {
+    .orçamento-total {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen (max-width: 400px) 
+{
+    .orçamento-dentro {
+        grid-template-columns: 1fr;
+    }      
+    .form-adress 
+    {
+        display: block;
+    }
+}
+
+
+</style>

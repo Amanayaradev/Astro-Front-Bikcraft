@@ -1,0 +1,202 @@
+---
+
+---
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('.form-orçamento');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita que o formulário seja enviado normalmente
+
+            const formData = new FormData(form);
+
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Armazena os dados com Astro
+            Astro.push(data).then(() => {
+                // Limpa o formulário após o envio
+                form.reset();
+                console.log('Dados armazenados com sucesso');
+            }).catch(error => {
+                console.error('Erro ao armazenar os dados:', error);
+            });
+        });
+    });
+  console.log('Welcome, browser console!');
+</script>
+
+
+<form class="form-orçamento">
+<div>
+    <h4 class="h4-orc">DADOS PESSOAIS</h4>
+    <div class="form-adress first-form">
+    <div class="text-form">
+        <label for="nome">Nome</label>
+        <input class="box-form" type="text" id="nome">
+    </div>
+    <div class="text-form">
+        <label for="last-name">Sobrenome</label>
+        <input class="box-form" type="text" id="Sobrenome">
+    </div>
+    <div class="text-form">
+        <label for="cpf">CPF</label>
+        <input class="box-form" type="text" id="cpf" required placeholder="000.000.000-00">
+    </div>
+    <div class="text-form">
+        <label for="email">Email</label>
+        <input class="box-form" type="text" id="email">
+    </div>
+</div>
+<h4 class="h4-orc">ENTREGA</h4>
+<div class="form-adress">
+    <div class="text-form">
+    <label for="cep">CEP</label>
+    <input class="box-form" type="text" id="cep" required placeholder="00000-000">
+    </div>
+    <div class="text-form">
+        <label for="nome">Número:</label>
+        <input class="box-form" type="number" id="number">
+    </div>
+    <div class="text-form">
+        <label for="address">Logradouro</label>
+        <input class="box-form" type="text" id="nome" required placeholder="Rua, avenida...">
+    </div>
+    <div class="text-form">
+        <label for="bairro">Bairro</label>
+        <input class="box-form" type="text" id="bairro">
+    </div>
+    <div class="text-form">
+        <label for="city">Cidade</label>
+        <input class="box-form" type="text" id="nome">
+    </div>
+    <div class="text-form">
+        <label for="state">Estado</label>
+        <select class="box-form " name="estados-brasil">
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+        </select>
+    </div>
+    <div class="span2  box_termo">
+            <input class="input_box" name="checkbox" type="checkbox" value="termo" />
+            <p class="texto-box">li e aceito os <a class="link-none" href="#">termos e condições.</a></p>
+    </div>
+
+        <button class="botão-um" type="button">SOLICITAR ORÇAMENTO</button>
+</form>
+
+<style>
+.dados-orçamento {
+    background-color: white;
+    padding: 4rem;
+}
+
+.text-form label,
+.text-form p {
+    display: block;
+    font: 600 1rem/1.5 Arial, Helvetica, sans-serif;
+}
+
+.h4-orc {
+    margin: 2rem 0;
+    font: 600 0.9rem/3 Arial, Helvetica, sans-serif;
+    color: #8b8b8b;
+}
+.h4-orc::before {
+    justify-content: center;
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 12px;
+    background-color: #FFBB00;
+    margin: 0 0.7rem 0 -1rem ;
+}
+
+.box-form{
+    background: #F7F7F7;
+    padding: 0.5rem;
+    font: 400 1rem/1.5 roboto, sans-serif;
+    border: 1px solid #EDEDED;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.teste-form option {
+    text-decoration: none;
+}
+
+.form-adress {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.first-form :nth-child(3),
+.first-form :nth-child(4) {
+    grid-column: span 2;
+}
+
+.box_termo {
+    align-items: center;
+    display: flex;
+    gap: 0.7rem;
+}
+
+.texto-box {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    color: #6b6b6b;
+}
+
+.detalhe-entrega {
+    display: grid;
+    grid-template-columns: 1fr 35fr;
+    align-items: center;
+    margin-left: -1rem;
+}
+.botão-um {
+		font-size: 3vh;
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: 900;
+		text-transform: uppercase;
+		display: inline-block;
+		text-decoration: none;
+		padding: 0.5rem 1rem;
+		color: #332200;
+		background-image: linear-gradient(#FFBF00, #F2A50C);
+		border-radius: 0.2rem;
+		margin-top: 1.5rem;
+    border-style: none;
+	}
+	.botão-um:hover {
+		background-image: linear-gradient(#F2A50c, #FFBF00);
+	}
+
+</style>
