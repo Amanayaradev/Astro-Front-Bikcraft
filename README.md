@@ -1,5 +1,4 @@
-# Site de Aluguel de Bicicletas com Astro
-Você também pode visualizar a demo online [aqui](link-da-demo)
+# [Site](link-da-demo) de Aluguel de Bicicletas com Astro
 
 Um site simples de aluguel de bicicletas, desenvolvido com o framework Astro, onde os usuários podem visualizar as bicicletas disponíveis e solicitar um orçamento.
 
