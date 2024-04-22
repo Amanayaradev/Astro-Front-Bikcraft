@@ -1,4 +1,5 @@
-# Site de Aluguel de Bicicletas com Astro https://astro-front-bikcraft.vercel.app/
+# Site de Aluguel de Bicicletas com Astro
+https://astro-front-bikcraft.vercel.app/
 
 Um site simples de aluguel de bicicletas, desenvolvido com o framework Astro, onde os usuários podem visualizar as bicicletas disponíveis e solicitar um orçamento.
 
