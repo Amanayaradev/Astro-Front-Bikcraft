@@ -12,6 +12,12 @@ Página inicial do site, onde os usuários podem ver as bicicletas disponíveis.
 
 Página onde os usuários podem solicitar um orçamento.
 
+## Tecnologias Utilizadas
+
+- HTML
+- CSS
+- JavaScript
+- Astro
 
 ## Instalação
 
