@@ -1,4 +1,4 @@
-# Site de Aluguel de Bicicletas com Astro
+# Site de Aluguel de Bicicletas com Astro https://astro-front-bikcraft.vercel.app/
 
 Um site simples de aluguel de bicicletas, desenvolvido com o framework Astro, onde os usuários podem visualizar as bicicletas disponíveis e solicitar um orçamento.
 
@@ -19,16 +19,3 @@ Página onde os usuários podem solicitar um orçamento.
 - JavaScript
 - Astro
 
-## Instalação
-
-Para começar, você precisará clonar este repositório e instalar as dependências. No terminal, execute os seguintes comandos:
-
-git clone <URL_do_seu_repositório>
-
-cd <nome_do_seu_projeto>
-
-npm install
-
-Para iniciar o servidor de desenvolvimento local, execute:
-
-npm run dev
